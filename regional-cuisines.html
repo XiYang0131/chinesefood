@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Cuisines - Chinese Culinary Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <style>
+        .map-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+    </style>
+    <style>
+        /* 语言切换相关样式 */
+        .translatable {
+            transition: opacity 0.3s ease;
+        }
+        
+        .language-selector select {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* 语言切换动画 */
+        .fade-out {
+            opacity: 0;
+        }
+        
+        .fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuisine-background"></div>
+    <!-- 包含主导航的header -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Chinese Culinary Journey Logo">
+                <span>Chinese Culinary Journey</span>
+            </a>
+        </div>
+        <ul class="main-nav">
+            <li><a href="index.html" class="home-link">首页</a></li>
+            <li><a href="#regional-cuisines">Regional Cuisines</a></li>
+            <li><a href="#cultural-stories">Cultural Stories</a></li>
+            <li><a href="#cooking-classes">Online Classes</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#membership">Membership</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="language-select" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="ja">日本語</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </nav>
+    
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><span id="current-cuisine">川菜</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="cuisine-page-container">
+        <aside class="cuisine-sidebar">
+            <div class="back-to-home">
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> 返回首页
+                </a>
+            </div>
+            <div class="cuisine-list">
+                <ul>
+                    <li><a href="#sichuan-cuisine" class="cuisine-link">川菜 Sichuan</a></li>
+                    <li><a href="#cantonese-cuisine" class="cuisine-link">粤菜 Cantonese</a></li>
+                    <li><a href="#shandong-cuisine" class="cuisine-link">鲁菜 Shandong</a></li>
+                    <li><a href="#jiangsu-cuisine" class="cuisine-link">苏菜 Jiangsu</a></li>
+                    <li><a href="#zhejiang-cuisine" class="cuisine-link">浙菜 Zhejiang</a></li>
+                    <li><a href="#fujian-cuisine" class="cuisine-link">闽菜 Fujian</a></li>
+                    <li><a href="#hunan-cuisine" class="cuisine-link">湘菜 Hunan</a></li>
+                    <li><a href="#anhui-cuisine" class="cuisine-link">徽菜 Anhui</a></li>
+                </ul>
+            </div>
+            
+            <div class="cuisine-map">
+                <h4>中国菜系地图</h4>
+                <img src="images/china-cuisine-map.png" alt="中国菜系地图" class="map-image" style="cursor: zoom-in;">
+                <p>点击地图查看大图</p>
+            </div>
+        </aside>
+        
+        <main class="cuisine-content">
+            <section id="sichuan-cuisine" class="cuisine-section">
+                <h2>川菜 Sichuan Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/sichuan/sichuan-banner.jpg" alt="川菜 Sichuan Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle">麻辣鲜香 - The Bold and Spicy Flavors of Western China</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="四川菜，简称川菜，是中国八大菜系之一，以其麻辣著称于世。四川盆地湿热的气候催生了当地人对辛辣食物的偏好，以驱散湿气。川菜的特点是味型丰富，包括麻辣、鱼香、怪味、酸辣等二十多种风味，被誉为"一菜一格，百菜百味"。" 
+                           data-lang-en="Sichuan cuisine, originating from Sichuan Province, is one of China's eight major culinary traditions, renowned worldwide for its spicy and numbing flavors. The humid climate of the Sichuan Basin led locals to prefer spicy foods to dispel dampness. Sichuan cuisine features a rich variety of flavor profiles, including mala (numbing spice), yuxiang (fish-fragrant), guaiwei (strange flavor), and suanla (hot and sour), among over twenty distinct tastes, earning it the reputation of 'one dish, one style; a hundred dishes, a hundred flavors'."
+                           class="translatable">
+                            四川菜，简称川菜，是中国八大菜系之一，以其麻辣著称于世。四川盆地湿热的气候催生了当地人对辛辣食物的偏好，以驱散湿气。川菜的特点是味型丰富，包括麻辣、鱼香、怪味、酸辣等二十多种风味，被誉为"一菜一格，百菜百味"。
+                        </p>
+                        
+                        <p data-lang-zh="川菜的历史可以追溯到秦汉时期，但在明清时期达到了鼎盛。川菜的发展受到四川地区丰富物产的影响，尤其是川椒和各种辣椒的广泛种植，使得麻辣成为川菜的主要特色。如今，川菜已成为全球最受欢迎的中国菜系之一，其独特的麻辣口味征服了无数美食爱好者的味蕾。" 
+                           data-lang-en="The history of Sichuan cuisine can be traced back to the Qin and Han dynasties, but it reached its peak during the Ming and Qing periods. The development of Sichuan cuisine was influenced by the region's abundant resources, especially the widespread cultivation of Sichuan pepper and various chili peppers, which made mala flavor the main characteristic of Sichuan cuisine. Today, Sichuan cuisine has become one of the most popular Chinese cuisines globally, with its unique spicy and numbing flavors conquering the taste buds of countless food enthusiasts."
+                           class="translatable">
+                            川菜的历史可以追溯到秦汉时期，但在明清时期达到了鼎盛。川菜的发展受到四川地区丰富物产的影响，尤其是川椒和各种辣椒的广泛种植，使得麻辣成为川菜的主要特色。如今，川菜已成为全球最受欢迎的中国菜系之一，其独特的麻辣口味征服了无数美食爱好者的味蕾。
+                        </p>
+                        
+                        <p data-lang-zh="川菜烹饪技法多样，包括煎、炒、烧、炸、煮、蒸、腌、熏等，尤其擅长"干烹"、"煽"、"熘"、"炒"等技法。川菜讲究火候的掌握，善于运用高温快速烹饪，保持食材的鲜嫩和香气。川菜还注重调味品的搭配和使用，形成了独特的复合味型。" 
+                           data-lang-en="Sichuan cuisine employs a variety of cooking techniques, including pan-frying, stir-frying, braising, deep-frying, boiling, steaming, pickling, and smoking, with particular expertise in 'dry-frying', 'quick-frying', 'flash-frying', and 'stir-frying'. Sichuan chefs emphasize precise control of cooking temperature and time, often using high heat for quick cooking to preserve the tenderness and aroma of ingredients. Sichuan cuisine also pays great attention to the combination and use of seasonings, creating unique compound flavors."
+                           class="translatable">
+                            川菜烹饪技法多样，包括煎、炒、烧、炸、煮、蒸、腌、熏等，尤其擅长"干烹"、"煽"、"熘"、"炒"等技法。川菜讲究火候的掌握，善于运用高温快速烹饪，保持食材的鲜嫩和香气。川菜还注重调味品的搭配和使用，形成了独特的复合味型。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>川椒（花椒）</strong> - <span data-lang-zh="提供独特的麻感，是川菜的灵魂" data-lang-en="Provides the unique numbing sensation, the soul of Sichuan cuisine" class="translatable">提供独特的麻感，是川菜的灵魂</span></li>
+                            <li><strong>辣椒</strong> - <span data-lang-zh="各种干鲜辣椒提供不同层次的辣味" data-lang-en="Various dried and fresh chilies provide different levels of spiciness" class="translatable">各种干鲜辣椒提供不同层次的辣味</span></li>
+                            <li><strong>豆瓣酱</strong> - <span data-lang-zh="四川特产，由蚕豆和辣椒发酵而成" data-lang-en="Sichuan specialty, fermented from broad beans and chilies" class="translatable">四川特产，由蚕豆和辣椒发酵而成</span></li>
+                            <li><strong>郫县豆瓣</strong> - <span data-lang-zh="四川郫县特产，色泽红亮，味道浓郁" data-lang-en="Specialty from Pixian County in Sichuan, bright red in color with rich flavor" class="translatable">四川郫县特产，色泽红亮，味道浓郁</span></li>
+                            <li><strong>花椒油</strong> - <span data-lang-zh="增添香气和麻感" data-lang-en="Adds aroma and numbing sensation" class="translatable">增添香气和麻感</span></li>
+                            <li><strong>泡姜、泡椒</strong> - <span data-lang-zh="提供酸辣味" data-lang-en="Provides sour and spicy flavors" class="translatable">提供酸辣味</span></li>
+                            <li><strong>芽菜</strong> - <span data-lang-zh="增添咸香味" data-lang-en="Adds salty and aromatic flavors" class="translatable">增添咸香味</span></li>
+                            <li><strong>豆豉</strong> - <span data-lang-zh="提供独特的发酵香气" data-lang-en="Provides unique fermented aroma" class="translatable">提供独特的发酵香气</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3>代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/sichuan/mapo-tofu.png" alt="麻婆豆腐" class="lazy">
+                                <h4>麻婆豆腐</h4>
+                                <p>麻辣鲜香的豆腐菜肴，由陈麻婆创制于清代</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/sichuan/kung-pao-chicken.png" alt="宫保鸡丁" class="lazy">
+                                <h4>宫保鸡丁</h4>
+                                <p>鲜香麻辣的经典川菜，以鸡肉、花生和干辣椒为主要原料</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/sichuan/sour-cabbage-fish.png" 
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" 
+                                     alt="酸菜鱼" 
+                                     class="lazy"
+                                     onerror="this.src='images/logo.png'; this.onerror=null;">
+                                <h4>酸菜鱼</h4>
+                                <p>酸辣开胃的鱼片，配以酸菜提味，是川菜中的经典菜品</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/sichuan/twice-cooked-pork.png" alt="回锅肉" class="lazy">
+                                <h4>回锅肉</h4>
+                                <p>先煮后炒的经典川菜，肥而不腻，鲜香可口</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/sichuan/dan-dan-noodles.png" alt="担担面" class="lazy">
+                                <h4>担担面</h4>
+                                <p>四川特色面食，麻辣鲜香，以花椒、辣椒和芝麻酱调味</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="cantonese-cuisine" class="cuisine-section">
+                <h2>粤菜 Cantonese Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/cantonese/cantonese-banner.jpg" alt="粤菜 Cantonese Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="鲜香清淡 - 中国南部的精致烹饪艺术" data-lang-en="The Delicate and Fresh Flavors of Southern China" class="translatable">鲜香清淡 - 中国南部的精致烹饪艺术</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="粤菜，源于广东省，是中国八大菜系之一，以其鲜美、清淡、嫩滑的特点著称。粤菜注重保持食材的原汁原味，烹调方法多样，尤其擅长炒、炖、蒸等技法。粤菜讲究"色、香、味、形"的和谐统一，追求食材的新鲜度和烹饪的精细度。" 
+                           data-lang-en="Cantonese cuisine, originating from Guangdong Province, is one of China's eight major culinary traditions, renowned for its fresh, light, and tender characteristics. Cantonese cuisine emphasizes preserving the natural flavors of ingredients, employing a variety of cooking methods, particularly excelling in stir-frying, stewing, and steaming. Cantonese cuisine pays attention to the harmonious unity of 'color, aroma, taste, and presentation', pursuing the freshness of ingredients and the delicacy of cooking."
+                           class="translatable">
+                            粤菜，源于广东省，是中国八大菜系之一，以其鲜美、清淡、嫩滑的特点著称。粤菜注重保持食材的原汁原味，烹调方法多样，尤其擅长炒、炖、蒸等技法。粤菜讲究"色、香、味、形"的和谐统一，追求食材的新鲜度和烹饪的精细度。
+                        </p>
+                        
+                        <p data-lang-zh="粤菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。广东地区靠近海洋，物产丰富，气候温暖湿润，这些条件为粤菜的发展提供了得天独厚的优势。粤菜的发展还受到了西方烹饪技巧的影响，形成了独特的融合风格。" 
+                           data-lang-en="The history of Cantonese cuisine can be traced back to the Tang and Song dynasties, but it developed rapidly during the Ming and Qing periods. Guangdong region's proximity to the ocean, abundant resources, and warm humid climate provided unique advantages for the development of Cantonese cuisine. The development of Cantonese cuisine was also influenced by Western cooking techniques, forming a unique fusion style."
+                           class="translatable">
+                            粤菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。广东地区靠近海洋，物产丰富，气候温暖湿润，这些条件为粤菜的发展提供了得天独厚的优势。粤菜的发展还受到了西方烹饪技巧的影响，形成了独特的融合风格。
+                        </p>
+                        
+                        <p data-lang-zh="粤菜以其广泛的食材选择而闻名，有"食在广州"的说法。粤菜厨师善于运用各种海鲜、家禽、野味和蔬菜，创造出丰富多样的菜肴。粤菜的调味相对清淡，注重突出食材本身的味道，常用的调味品包括姜、蒜、葱、酱油、蚝油等。粤菜还包括了早茶文化，点心种类繁多，是粤菜的重要组成部分。" 
+                           data-lang-en="Cantonese cuisine is known for its wide selection of ingredients, with the saying 'Eat in Guangzhou'. Cantonese chefs are skilled at using various seafood, poultry, game, and vegetables to create a rich variety of dishes. The seasoning of Cantonese cuisine is relatively light, focusing on highlighting the natural flavors of the ingredients, with commonly used seasonings including ginger, garlic, scallion, soy sauce, and oyster sauce. Cantonese cuisine also includes the morning tea culture, with a wide variety of dim sum, which is an important component of Cantonese cuisine."
+                           class="translatable">
+                            粤菜以其广泛的食材选择而闻名，有"食在广州"的说法。粤菜厨师善于运用各种海鲜、家禽、野味和蔬菜，创造出丰富多样的菜肴。粤菜的调味相对清淡，注重突出食材本身的味道，常用的调味品包括姜、蒜、葱、酱油、蚝油等。粤菜还包括了早茶文化，点心种类繁多，是粤菜的重要组成部分。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>蚝油</strong> - <span data-lang-zh="粤菜的灵魂调味品，增添鲜美和光泽" data-lang-en="The soul seasoning of Cantonese cuisine, adding umami and gloss" class="translatable">粤菜的灵魂调味品，增添鲜美和光泽</span></li>
+                            <li><strong>姜、蒜、葱</strong> - <span data-lang-zh="提供基础香气，去除腥味" data-lang-en="Providing basic aroma, removing fishy smells" class="translatable">提供基础香气，去除腥味</span></li>
+                            <li><strong>沙姜</strong> - <span data-lang-zh="特殊香料，常用于腌制和调味" data-lang-en="Special spice, often used for marinating and seasoning" class="translatable">特殊香料，常用于腌制和调味</span></li>
+                            <li><strong>陈皮</strong> - <span data-lang-zh="干橘皮，增添特殊香气" data-lang-en="Dried tangerine peel, adding special aroma" class="translatable">干橘皮，增添特殊香气</span></li>
+                            <li><strong>豆豉</strong> - <span data-lang-zh="发酵黑豆，增添复杂风味" data-lang-en="Fermented black beans, adding complex flavors" class="translatable">发酵黑豆，增添复杂风味</span></li>
+                            <li><strong>米酒</strong> - <span data-lang-zh="增添香气，去除腥味" data-lang-en="Adding aroma, removing fishy smells" class="translatable">增添香气，去除腥味</span></li>
+                            <li><strong>芝麻油</strong> - <span data-lang-zh="增添香气和风味" data-lang-en="Adding aroma and flavor" class="translatable">增添香气和风味</span></li>
+                            <li><strong>五香粉</strong> - <span data-lang-zh="混合香料，用于腌制和调味" data-lang-en="Mixed spices, used for marinating and seasoning" class="translatable">混合香料，用于腌制和调味</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/cantonese/char-siu.png" alt="叉烧" class="lazy">
+                                <h4 data-lang-zh="叉烧" data-lang-en="Char Siu" class="translatable">叉烧</h4>
+                                <p data-lang-zh="甜香可口的烤猪肉" data-lang-en="Sweet and savory roasted pork" class="translatable">甜香可口的烤猪肉</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/cantonese/claypot-rice.png" alt="煲仔饭" class="lazy">
+                                <h4 data-lang-zh="煲仔饭" data-lang-en="Claypot Rice" class="translatable">煲仔饭</h4>
+                                <p data-lang-zh="锅巴香脆，米饭鲜香的传统美食" data-lang-en="Traditional dish with crispy rice crust and savory toppings" class="translatable">锅巴香脆，米饭鲜香的传统美食</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/cantonese/dim-sum.png" alt="点心" class="lazy">
+                                <h4 data-lang-zh="点心" data-lang-en="Dim Sum" class="translatable">点心</h4>
+                                <p data-lang-zh="各式小巧精致的蒸煮食品" data-lang-en="Various small, delicate steamed or fried dishes" class="translatable">各式小巧精致的蒸煮食品</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/cantonese/steamed-fish.png" alt="清蒸鱼" class="lazy">
+                                <h4 data-lang-zh="清蒸鱼" data-lang-en="Steamed Fish" class="translatable">清蒸鱼</h4>
+                                <p data-lang-zh="保留鱼肉鲜美的经典蒸菜" data-lang-en="Classic steamed dish that preserves the freshness of fish" class="translatable">保留鱼肉鲜美的经典蒸菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/cantonese/white-cut-chicken.png" alt="白切鸡" class="lazy">
+                                <h4 data-lang-zh="白切鸡" data-lang-en="White Cut Chicken" class="translatable">白切鸡</h4>
+                                <p data-lang-zh="鲜嫩多汁的传统鸡肉料理" data-lang-en="Tender and juicy traditional poached chicken" class="translatable">鲜嫩多汁的传统鸡肉料理</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="shandong-cuisine" class="cuisine-section">
+                <h2>鲁菜 Shandong Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/shandong/shandong-banner.jpg" alt="鲁菜 Shandong Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="咸鲜醇厚 - 中国北方的浓郁风味" data-lang-en="The Hearty and Savory Flavors of Northern China" class="translatable">咸鲜醇厚 - 中国北方的浓郁风味</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="鲁菜，源于山东省，是中国八大菜系之一，也是北方菜系的代表。鲁菜以其咸鲜醇厚、突出主料、讲究火候的特点著称。鲁菜的烹调方法多样，尤其擅长爆、炒、烧、炸等技法，注重刀工和火候的掌握，追求菜品的色香味形俱佳。" 
+                           data-lang-en="Shandong cuisine, originating from Shandong Province, is one of China's eight major culinary traditions and a representative of northern Chinese cuisine. Shandong cuisine is known for its salty, fresh, and rich flavors, emphasis on main ingredients, and attention to cooking temperature. Shandong cuisine employs a variety of cooking methods, particularly excelling in quick-frying, stir-frying, braising, and deep-frying, paying attention to knife skills and control of cooking temperature, pursuing excellence in color, aroma, taste, and presentation of dishes."
+                           class="translatable">
+                            鲁菜，源于山东省，是中国八大菜系之一，也是北方菜系的代表。鲁菜以其咸鲜醇厚、突出主料、讲究火候的特点著称。鲁菜的烹调方法多样，尤其擅长爆、炒、烧、炸等技法，注重刀工和火候的掌握，追求菜品的色香味形俱佳。
+                        </p>
+                        
+                        <p data-lang-zh="鲁菜的历史悠久，可以追溯到春秋战国时期。山东地处黄河下游，物产丰富，尤其是海鲜和农产品，为鲁菜的发展提供了丰富的食材基础。鲁菜的发展还受到了宫廷菜的影响，形成了精细讲究的烹饪风格。" 
+                           data-lang-en="Shandong cuisine has a long history, dating back to the Spring and Autumn and Warring States periods. Located in the lower reaches of the Yellow River, Shandong is rich in resources, especially seafood and agricultural products, providing a rich ingredient base for the development of Shandong cuisine. The development of Shandong cuisine was also influenced by imperial court cuisine, forming a refined and meticulous cooking style."
+                           class="translatable">
+                            鲁菜的历史悠久，可以追溯到春秋战国时期。山东地处黄河下游，物产丰富，尤其是海鲜和农产品，为鲁菜的发展提供了丰富的食材基础。鲁菜的发展还受到了宫廷菜的影响，形成了精细讲究的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="鲁菜主要分为济南菜和胶东菜两大流派。济南菜注重清香、鲜嫩，多用葱姜蒜调味；胶东菜则以海鲜为主，注重鲜美醇厚。鲁菜的代表技法包括爆、炒、烧、炸、烹、炖等，尤其擅长大块肉类的烹饪和海鲜的处理。鲁菜对中国其他菜系有深远影响，被誉为"中国菜的源头"。" 
+                           data-lang-en="Shandong cuisine is mainly divided into two major schools: Jinan cuisine and Jiaodong cuisine. Jinan cuisine emphasizes fresh aroma and tenderness, often using scallion, ginger, and garlic for seasoning; Jiaodong cuisine focuses on seafood, emphasizing freshness and richness. Representative techniques of Shandong cuisine include quick-frying, stir-frying, braising, deep-frying, pan-frying, and stewing, particularly excelling in cooking large pieces of meat and handling seafood. Shandong cuisine has had a profound influence on other Chinese cuisines and is known as 'the source of Chinese cuisine'."
+                           class="translatable">
+                            鲁菜主要分为济南菜和胶东菜两大流派。济南菜注重清香、鲜嫩，多用葱姜蒜调味；胶东菜则以海鲜为主，注重鲜美醇厚。鲁菜的代表技法包括爆、炒、烧、炸、烹、炖等，尤其擅长大块肉类的烹饪和海鲜的处理。鲁菜对中国其他菜系有深远影响，被誉为"中国菜的源头"。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>葱</strong> - <span data-lang-zh="山东大葱，鲁菜的灵魂调味品" data-lang-en="Shandong scallion, the soul seasoning of Shandong cuisine" class="translatable">山东大葱，鲁菜的灵魂调味品</span></li>
+                            <li><strong>姜、蒜</strong> - <span data-lang-zh="提供基础香气，增添风味" data-lang-en="Providing basic aroma, adding flavor" class="translatable">提供基础香气，增添风味</span></li>
+                            <li><strong>海鲜</strong> - <span data-lang-zh="胶东菜的主要食材，如海参、鲍鱼等" data-lang-en="Main ingredients of Jiaodong cuisine, such as sea cucumber, abalone, etc." class="translatable">胶东菜的主要食材，如海参、鲍鱼等</span></li>
+                            <li><strong>花椒</strong> - <span data-lang-zh="增添香气和微麻感" data-lang-en="Adding aroma and mild numbing sensation" class="translatable">增添香气和微麻感</span></li>
+                            <li><strong>酱油</strong> - <span data-lang-zh="提供咸味和色泽" data-lang-en="Providing saltiness and color" class="translatable">提供咸味和色泽</span></li>
+                            <li><strong>料酒</strong> - <span data-lang-zh="去腥增香" data-lang-en="Removing fishy smells and adding aroma" class="translatable">去腥增香</span></li>
+                            <li><strong>香菜</strong> - <span data-lang-zh="常用于点缀和增添香气" data-lang-en="Often used for garnishing and adding aroma" class="translatable">常用于点缀和增添香气</span></li>
+                            <li><strong>淀粉</strong> - <span data-lang-zh="用于勾芡和裹粉" data-lang-en="Used for thickening and coating" class="translatable">用于勾芡和裹粉</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/shandong/sweet-and-sour-carp.png" alt="糖醋鲤鱼" class="lazy">
+                                <h4 data-lang-zh="糖醋鲤鱼" data-lang-en="Sweet and Sour Carp" class="translatable">糖醋鲤鱼</h4>
+                                <p data-lang-zh="外酥里嫩，酸甜可口的传统鱼菜" data-lang-en="Traditional fish dish with crispy exterior and tender interior in sweet and sour sauce" class="translatable">外酥里嫩，酸甜可口的传统鱼菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/shandong/braised-sea-cucumber.png" alt="葱烧海参" class="lazy">
+                                <h4 data-lang-zh="葱烧海参" data-lang-en="Braised Sea Cucumber with Scallions" class="translatable">葱烧海参</h4>
+                                <p data-lang-zh="鲜美滋补的海鲜名菜" data-lang-en="Nutritious and delicious seafood delicacy" class="translatable">鲜美滋补的海鲜名菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/shandong/dezhou-chicken.png" alt="德州扒鸡" class="lazy">
+                                <h4 data-lang-zh="德州扒鸡" data-lang-en="Dezhou Braised Chicken" class="translatable">德州扒鸡</h4>
+                                <p data-lang-zh="色泽红亮，肉质鲜嫩的传统名菜" data-lang-en="Traditional dish with bright red color and tender meat" class="translatable">色泽红亮，肉质鲜嫩的传统名菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/shandong/nine-turn-large-intestine.png" alt="九转大肠" class="lazy">
+                                <h4 data-lang-zh="九转大肠" data-lang-en="Nine-Turn Intestine" class="translatable">九转大肠</h4>
+                                <p data-lang-zh="酸甜咸香，口感丰富的特色菜" data-lang-en="Specialty dish with sweet, sour, and savory flavors and rich texture" class="translatable">酸甜咸香，口感丰富的特色菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/shandong/stir-fried-scallops.png" alt="葱爆海蛤片" class="lazy">
+                                <h4 data-lang-zh="葱爆海蛤片" data-lang-en="Stir-Fried Clams with Scallions" class="translatable">葱爆海蛤片</h4>
+                                <p data-lang-zh="鲜嫩爽口的海鲜快炒" data-lang-en="Fresh and tender seafood stir-fry" class="translatable">鲜嫩爽口的海鲜快炒</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="jiangsu-cuisine" class="cuisine-section">
+                <h2>苏菜 Jiangsu Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/jiangsu/jiangsu-banner.jpg" alt="苏菜 Jiangsu Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="精致平和 - 中国东部的精细烹饪技艺" data-lang-en="The Refined and Elegant Flavors of Eastern China" class="translatable">精致平和 - 中国东部的精细烹饪技艺</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="苏菜，源于江苏省，是中国八大菜系之一，以其精细的刀工、精致的摆盘和平和的口味著称。苏菜注重食材的选择和处理，烹调方法多样，尤其擅长炖、焖、炒、蒸等技法。苏菜讲究'刀工精细、火候适中、调味清淡'，追求菜品的色、香、味、形、器的和谐统一。" 
+                           data-lang-en="Jiangsu cuisine, originating from Jiangsu Province, is one of China's eight major culinary traditions, known for its refined knife skills, elegant presentation, and balanced flavors. Jiangsu cuisine emphasizes the selection and processing of ingredients, employing a variety of cooking methods, particularly excelling in stewing, braising, stir-frying, and steaming. Jiangsu cuisine pays attention to 'refined knife skills, appropriate cooking temperature, and light seasoning', pursuing the harmonious unity of color, aroma, taste, presentation, and utensils of dishes."
+                           class="translatable">
+                            苏菜，源于江苏省，是中国八大菜系之一，以其精细的刀工、精致的摆盘和平和的口味著称。苏菜注重食材的选择和处理，烹调方法多样，尤其擅长炖、焖、炒、蒸等技法。苏菜讲究'刀工精细、火候适中、调味清淡'，追求菜品的色、香、味、形、器的和谐统一。
+                        </p>
+                        
+                        <p data-lang-zh="苏菜的历史可以追溯到春秋战国时期，但在明清时期得到了迅速发展。江苏地区水网密布，物产丰富，尤其是河鲜和农产品，为苏菜的发展提供了丰富的食材基础。苏菜的发展还受到了宫廷菜肴和文人雅士的影响，形成了精致典雅的烹饪风格。" 
+                           data-lang-en="The history of Jiangsu cuisine can be traced back to the Spring and Autumn and Warring States periods, but it developed rapidly during the Ming and Qing periods. Jiangsu region is crisscrossed with waterways and rich in resources, especially river fish and agricultural products, providing a rich ingredient base for the development of Jiangsu cuisine. The development of Jiangsu cuisine was also influenced by imperial court cuisine and literati, forming a refined and elegant cooking style."
+                           class="translatable">
+                            苏菜的历史可以追溯到春秋战国时期，但在明清时期得到了迅速发展。江苏地区水网密布，物产丰富，尤其是河鲜和农产品，为苏菜的发展提供了丰富的食材基础。苏菜的发展还受到了宫廷菜肴和文人雅士的影响，形成了精致典雅的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="苏菜主要分为三大流派：淮扬菜、苏锡菜和金陵菜。淮扬菜注重本味，清鲜爽口；苏锡菜注重甜味，口味醇厚；金陵菜注重咸鲜，口味较重。苏菜的代表技法包括炖、焖、炒、蒸等，尤其擅长烹制河鲜和精细的刀工。苏菜以其精致的风格和平衡的口味，在中国烹饪史上占有重要地位。" 
+                           data-lang-en="Jiangsu cuisine is mainly divided into three major schools: Huaiyang cuisine, Su-Xi cuisine, and Jinling cuisine. Huaiyang cuisine emphasizes natural flavors, with fresh and light taste; Su-Xi cuisine emphasizes sweetness, with a rich taste; Jinling cuisine emphasizes saltiness and freshness, with a stronger taste. Representative techniques of Jiangsu cuisine include stewing, braising, stir-frying, and steaming, particularly excelling in cooking river fish and refined knife skills. With its refined style and balanced flavors, Jiangsu cuisine occupies an important position in Chinese culinary history."
+                           class="translatable">
+                            苏菜主要分为三大流派：淮扬菜、苏锡菜和金陵菜。淮扬菜注重本味，清鲜爽口；苏锡菜注重甜味，口味醇厚；金陵菜注重咸鲜，口味较重。苏菜的代表技法包括炖、焖、炒、蒸等，尤其擅长烹制河鲜和精细的刀工。苏菜以其精致的风格和平衡的口味，在中国烹饪史上占有重要地位。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>河鲜</strong> - <span data-lang-zh="江苏水网密布，河鲜是苏菜的重要食材" data-lang-en="Jiangsu is crisscrossed with waterways, making river fish important ingredients in Jiangsu cuisine" class="translatable">江苏水网密布，河鲜是苏菜的重要食材</span></li>
+                            <li><strong>糖</strong> - <span data-lang-zh="苏锡菜常用，提供甜味" data-lang-en="Commonly used in Su-Xi cuisine, providing sweetness" class="translatable">苏锡菜常用，提供甜味</span></li>
+                            <li><strong>醋</strong> - <span data-lang-zh="增添酸味，平衡口感" data-lang-en="Adding sourness, balancing taste" class="translatable">增添酸味，平衡口感</span></li>
+                            <li><strong>料酒</strong> - <span data-lang-zh="去腥增香" data-lang-en="Removing fishy smells and adding aroma" class="translatable">去腥增香</span></li>
+                            <li><strong>姜、蒜</strong> - <span data-lang-zh="提供基础香气" data-lang-en="Providing basic aroma" class="translatable">提供基础香气</span></li>
+                            <li><strong>香菜</strong> - <span data-lang-zh="常用于点缀和增添香气" data-lang-en="Often used for garnishing and adding aroma" class="translatable">常用于点缀和增添香气</span></li>
+                            <li><strong>淀粉</strong> - <span data-lang-zh="用于勾芡和增加口感" data-lang-en="Used for thickening and enhancing texture" class="translatable">用于勾芡和增加口感</span></li>
+                            <li><strong>火腿</strong> - <span data-lang-zh="增添鲜味和香气" data-lang-en="Adding umami and aroma" class="translatable">增添鲜味和香气</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/jiangsu/crab-meat-pork-balls.png" alt="蟹粉狮子头" class="lazy">
+                                <h4 data-lang-zh="蟹粉狮子头" data-lang-en="Crab Meat Pork Balls" class="translatable">蟹粉狮子头</h4>
+                                <p data-lang-zh="加入蟹黄的大型肉丸" data-lang-en="Large pork meatballs with crab roe" class="translatable">加入蟹黄的大型肉丸</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/jiangsu/crystal-pork.png" alt="水晶肴肉" class="lazy">
+                                <h4 data-lang-zh="水晶肴肉" data-lang-en="Crystal Pork Terrine" class="translatable">水晶肴肉</h4>
+                                <p data-lang-zh="晶莹剔透的猪肉冻" data-lang-en="Translucent pork aspic with a delicate texture" class="translatable">晶莹剔透的猪肉冻</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/jiangsu/dongpo-pork.png" alt="东坡肉" class="lazy">
+                                <h4 data-lang-zh="东坡肉" data-lang-en="Dongpo Pork" class="translatable">东坡肉</h4>
+                                <p data-lang-zh="肥而不腻，入口即化的红烧猪肉" data-lang-en="Braised pork belly that is fatty but not greasy, melt-in-your-mouth tender" class="translatable">肥而不腻，入口即化的红烧猪肉</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/jiangsu/sweet-and-sour-mandarin-fish.png" alt="松鼠桂鱼" class="lazy">
+                                <h4 data-lang-zh="松鼠桂鱼" data-lang-en="Squirrel-Shaped Mandarin Fish" class="translatable">松鼠桂鱼</h4>
+                                <p data-lang-zh="外形似松鼠，酸甜可口的鱼料理" data-lang-en="Fish dish shaped like a squirrel with sweet and sour sauce" class="translatable">外形似松鼠，酸甜可口的鱼料理</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/jiangsu/yangzhou-fried-rice.png" alt="扬州炒饭" class="lazy">
+                                <h4 data-lang-zh="扬州炒饭" data-lang-en="Yangzhou Fried Rice" class="translatable">扬州炒饭</h4>
+                                <p data-lang-zh="色彩缤纷的传统炒饭" data-lang-en="Colorful traditional fried rice with various ingredients" class="translatable">色彩缤纷的传统炒饭</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="zhejiang-cuisine" class="cuisine-section">
+                <h2>浙菜 Zhejiang Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/zhejiang/zhejiang-banner.jpg" alt="浙菜 Zhejiang Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="鲜美清淡 - 江南水乡的精致风味" data-lang-en="The Fresh and Delicate Flavors of Jiangnan Watertown" class="translatable">鲜美清淡 - 江南水乡的精致风味</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="浙菜，源于浙江省，是中国八大菜系之一，以其鲜嫩、清爽、本味的特点著称。浙菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长炒、炖、蒸、炸等技法。浙菜讲究'鲜、嫩、脆、爽'，追求菜品的色、香、味、形的和谐统一。" 
+                           data-lang-en="Zhejiang cuisine, originating from Zhejiang Province, is one of China's eight major culinary traditions, known for its fresh, tender, and natural flavors. Zhejiang cuisine emphasizes the freshness of ingredients and their original flavors, employing a variety of cooking methods, particularly excelling in stir-frying, stewing, steaming, and deep-frying. Zhejiang cuisine pays attention to 'freshness, tenderness, crispness, and refreshing taste', pursuing the harmonious unity of color, aroma, taste, and presentation of dishes."
+                           class="translatable">
+                            浙菜，源于浙江省，是中国八大菜系之一，以其鲜嫩、清爽、本味的特点著称。浙菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长炒、炖、蒸、炸等技法。浙菜讲究'鲜、嫩、脆、爽'，追求菜品的色、香、味、形的和谐统一。
+                        </p>
+                        
+                        <p data-lang-zh="浙菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。浙江地区水网密布，物产丰富，尤其是海鲜、河鲜和山珍，为浙菜的发展提供了丰富的食材基础。浙菜的发展还受到了江南文化的影响，形成了精致典雅的烹饪风格。" 
+                           data-lang-en="The history of Zhejiang cuisine can be traced back to the Tang and Song dynasties, but it developed rapidly during the Ming and Qing periods. Zhejiang region is crisscrossed with waterways and rich in resources, especially seafood, river fish, and mountain delicacies, providing a rich ingredient base for the development of Zhejiang cuisine. The development of Zhejiang cuisine was also influenced by Jiangnan culture, forming a refined and elegant cooking style."
+                           class="translatable">
+                            浙菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。浙江地区水网密布，物产丰富，尤其是海鲜、河鲜和山珍，为浙菜的发展提供了丰富的食材基础。浙菜的发展还受到了江南文化的影响，形成了精致典雅的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="浙菜主要分为杭帮菜、宁波菜、绍兴菜和温州菜四大流派。杭帮菜注重本味，清鲜爽口；宁波菜注重海鲜，咸鲜醇厚；绍兴菜注重时令，鲜香浓郁；温州菜注重海鲜，清淡鲜美。浙菜的代表技法包括炒、炖、蒸、炸等，尤其擅长烹制海鲜和河鲜。浙菜以其精致的风格和鲜美的口味，在中国烹饪史上占有重要地位。" 
+                           data-lang-en="Zhejiang cuisine is mainly divided into four major schools: Hangzhou cuisine, Ningbo cuisine, Shaoxing cuisine, and Wenzhou cuisine. Hangzhou cuisine emphasizes natural flavors, with fresh and light taste; Ningbo cuisine emphasizes seafood, with salty, fresh, and rich taste; Shaoxing cuisine emphasizes seasonal ingredients, with fresh, aromatic, and rich flavors; Wenzhou cuisine emphasizes seafood, with light and fresh taste. Representative techniques of Zhejiang cuisine include stir-frying, stewing, steaming, and deep-frying, particularly excelling in cooking seafood and river fish. With its refined style and fresh flavors, Zhejiang cuisine occupies an important position in Chinese culinary history."
+                           class="translatable">
+                            浙菜主要分为杭帮菜、宁波菜、绍兴菜和温州菜四大流派。杭帮菜注重本味，清鲜爽口；宁波菜注重海鲜，咸鲜醇厚；绍兴菜注重时令，鲜香浓郁；温州菜注重海鲜，清淡鲜美。浙菜的代表技法包括炒、炖、蒸、炸等，尤其擅长烹制海鲜和河鲜。浙菜以其精致的风格和鲜美的口味，在中国烹饪史上占有重要地位。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>绍兴酒</strong> - <span data-lang-zh="浙菜的灵魂调味品，增添香气和去腥" data-lang-en="The soul seasoning of Zhejiang cuisine, adding aroma and removing fishy smells" class="translatable">浙菜的灵魂调味品，增添香气和去腥</span></li>
+                            <li><strong>姜、蒜、葱</strong> - <span data-lang-zh="提供基础香气，去除腥味" data-lang-en="Providing basic aroma, removing fishy smells" class="translatable">提供基础香气，去除腥味</span></li>
+                            <li><strong>糖</strong> - <span data-lang-zh="平衡口味，增添甜味" data-lang-en="Balancing flavors, adding sweetness" class="translatable">平衡口味，增添甜味</span></li>
+                            <li><strong>醋</strong> - <span data-lang-zh="增添酸味，提升鲜味" data-lang-en="Adding sourness, enhancing umami" class="translatable">增添酸味，提升鲜味</span></li>
+                            <li><strong>海鲜</strong> - <span data-lang-zh="浙江沿海地区的特色食材" data-lang-en="Characteristic ingredients from Zhejiang's coastal areas" class="translatable">浙江沿海地区的特色食材</span></li>
+                            <li><strong>河鲜</strong> - <span data-lang-zh="浙江水网地区的特色食材" data-lang-en="Characteristic ingredients from Zhejiang's waterway areas" class="translatable">浙江水网地区的特色食材</span></li>
+                            <li><strong>竹笋</strong> - <span data-lang-zh="浙江山区的特色食材，清脆爽口" data-lang-en="Characteristic ingredients from Zhejiang's mountainous areas, crisp and refreshing" class="translatable">浙江山区的特色食材，清脆爽口</span></li>
+                            <li><strong>香菇</strong> - <span data-lang-zh="增添鲜味和香气" data-lang-en="Adding umami and aroma" class="translatable">增添鲜味和香气</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/zhejiang/west-lake-fish.png" alt="西湖醋鱼" class="lazy">
+                                <h4 data-lang-zh="西湖醋鱼" data-lang-en="West Lake Fish in Vinegar" class="translatable">西湖醋鱼</h4>
+                                <p data-lang-zh="甜酸可口的传统名菜" data-lang-en="Sweet and sour traditional delicacy" class="translatable">甜酸可口的传统名菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/zhejiang/dongpo-pork.png" alt="东坡肉" class="lazy">
+                                <h4 data-lang-zh="东坡肉" data-lang-en="Dongpo Pork" class="translatable">东坡肉</h4>
+                                <p data-lang-zh="肥而不腻的传统红烧肉" data-lang-en="Traditional braised pork belly that is rich but not greasy" class="translatable">肥而不腻的传统红烧肉</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/zhejiang/longjing-shrimp.png" alt="龙井虾仁" class="lazy">
+                                <h4 data-lang-zh="龙井虾仁" data-lang-en="Shrimp with Longjing Tea" class="translatable">龙井虾仁</h4>
+                                <p data-lang-zh="茶香四溢的鲜美虾仁" data-lang-en="Fresh shrimp infused with tea fragrance" class="translatable">茶香四溢的鲜美虾仁</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/zhejiang/beggar-chicken.png" alt="叫花鸡" class="lazy">
+                                <h4 data-lang-zh="叫花鸡" data-lang-en="Beggar's Chicken" class="translatable">叫花鸡</h4>
+                                <p data-lang-zh="荷叶包裹烤制的香嫩鸡肉" data-lang-en="Tender chicken roasted in lotus leaf" class="translatable">荷叶包裹烤制的香嫩鸡肉</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/zhejiang/stir-fried-bamboo-shoots.png" alt="清炒笋片" class="lazy">
+                                <h4 data-lang-zh="清炒笋片" data-lang-en="Stir-Fried Bamboo Shoots" class="translatable">清炒笋片</h4>
+                                <p data-lang-zh="清脆爽口的时令小菜" data-lang-en="Crisp and refreshing seasonal vegetable dish" class="translatable">清脆爽口的时令小菜</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="fujian-cuisine" class="cuisine-section">
+                <h2>闽菜 Fujian Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/fujian/fujian-banner.jpg" alt="闽菜 Fujian Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="清鲜香辣 - 中国东南沿海的海鲜风味" data-lang-en="The Fresh and Spicy Flavors of Southeastern China" class="translatable">清鲜香辣 - 中国东南沿海的海鲜风味</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="闽菜，源于福建省，是中国八大菜系之一，以其清鲜、香辣、爽口的特点著称。闽菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长炒、炖、蒸、煮等技法。闽菜讲究'香、鲜、脆、嫩'，追求菜品的色、香、味、形的和谐统一。" 
+                           data-lang-en="Fujian cuisine, originating from Fujian Province, is one of China's eight major culinary traditions, known for its fresh, spicy, and refreshing characteristics. Fujian cuisine emphasizes the freshness of ingredients and their original flavors, employing a variety of cooking methods, particularly excelling in stir-frying, stewing, steaming, and boiling. Fujian cuisine pays attention to 'aroma, freshness, crispness, and tenderness', pursuing the harmonious unity of color, aroma, taste, and presentation of dishes."
+                           class="translatable">
+                            闽菜，源于福建省，是中国八大菜系之一，以其清鲜、香辣、爽口的特点著称。闽菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长炒、炖、蒸、煮等技法。闽菜讲究'香、鲜、脆、嫩'，追求菜品的色、香、味、形的和谐统一。
+                        </p>
+                        
+                        <p data-lang-zh="闽菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。福建地处东南沿海，山海资源丰富，尤其是海鲜、山珍和各类调味品，为闽菜的发展提供了丰富的食材基础。闽菜的发展还受到了闽南文化和海外贸易的影响，形成了独特的烹饪风格。" 
+                           data-lang-en="The history of Fujian cuisine can be traced back to the Tang and Song dynasties, but it developed rapidly during the Ming and Qing periods. Fujian is located in the southeastern coast, rich in mountain and sea resources, especially seafood, mountain delicacies, and various seasonings, providing a rich ingredient base for the development of Fujian cuisine. The development of Fujian cuisine was also influenced by Minnan culture and overseas trade, forming a unique cooking style."
+                           class="translatable">
+                            闽菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。福建地处东南沿海，山海资源丰富，尤其是海鲜、山珍和各类调味品，为闽菜的发展提供了丰富的食材基础。闽菜的发展还受到了闽南文化和海外贸易的影响，形成了独特的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="闽菜主要分为福州菜、闽南菜、闽西菜三大流派。福州菜注重清淡鲜美；闽南菜注重香辣爽口；闽西菜注重浓郁醇厚。闽菜的代表技法包括炒、炖、蒸、煮等，尤其擅长烹制海鲜和山珍。闽菜的一大特色是注重汤汁，讲究'一菜一汤'，汤汁清鲜可口。闽菜以其独特的风格和鲜美的口味，在中国烹饪史上占有重要地位。" 
+                           data-lang-en="Fujian cuisine is mainly divided into three major schools: Fuzhou cuisine, Minnan cuisine, and Minxi cuisine. Fuzhou cuisine emphasizes light and fresh flavors; Minnan cuisine emphasizes spicy and refreshing tastes; Minxi cuisine emphasizes rich and mellow flavors. Representative techniques of Fujian cuisine include stir-frying, stewing, steaming, and boiling, particularly excelling in cooking seafood and mountain delicacies. A major feature of Fujian cuisine is its emphasis on soup, adhering to the principle of 'one dish, one soup', with clear and delicious soup. With its unique style and fresh flavors, Fujian cuisine occupies an important position in Chinese culinary history."
+                           class="translatable">
+                            闽菜主要分为福州菜、闽南菜、闽西菜三大流派。福州菜注重清淡鲜美；闽南菜注重香辣爽口；闽西菜注重浓郁醇厚。闽菜的代表技法包括炒、炖、蒸、煮等，尤其擅长烹制海鲜和山珍。闽菜的一大特色是注重汤汁，讲究'一菜一汤'，汤汁清鲜可口。闽菜以其独特的风格和鲜美的口味，在中国烹饪史上占有重要地位。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>海鲜</strong> - <span data-lang-zh="福建沿海地区的特色食材" data-lang-en="Characteristic ingredients from Fujian's coastal areas" class="translatable">福建沿海地区的特色食材</span></li>
+                            <li><strong>红糟</strong> - <span data-lang-zh="福建特色调味品，增添香气和色泽" data-lang-en="Fujian's characteristic seasoning, adding aroma and color" class="translatable">福建特色调味品，增添香气和色泽</span></li>
+                            <li><strong>沙茶酱</strong> - <span data-lang-zh="闽南特色调味品，增添香辣味" data-lang-en="Minnan's characteristic seasoning, adding spicy flavor" class="translatable">闽南特色调味品，增添香辣味</span></li>
+                            <li><strong>鱼露</strong> - <span data-lang-zh="增添鲜味，提升咸香" data-lang-en="Adding umami, enhancing salty aroma" class="translatable">增添鲜味，提升咸香</span></li>
+                            <li><strong>姜、蒜、葱</strong> - <span data-lang-zh="提供基础香气，去除腥味" data-lang-en="Providing basic aroma, removing fishy smells" class="translatable">提供基础香气，去除腥味</span></li>
+                            <li><strong>香菇</strong> - <span data-lang-zh="增添鲜味和香气" data-lang-en="Adding umami and aroma" class="translatable">增添鲜味和香气</span></li>
+                            <li><strong>竹笋</strong> - <span data-lang-zh="增添脆爽口感" data-lang-en="Adding crisp texture" class="translatable">增添脆爽口感</span></li>
+                            <li><strong>陈皮</strong> - <span data-lang-zh="增添特殊香气" data-lang-en="Adding special aroma" class="translatable">增添特殊香气</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/fujian/buddha-jumps-over-wall.png" alt="佛跳墙" class="lazy">
+                                <h4 data-lang-zh="佛跳墙" data-lang-en="Buddha Jumps Over the Wall" class="translatable">佛跳墙</h4>
+                                <p data-lang-zh="多种山珍海味熬制的名汤" data-lang-en="Famous soup made with various delicacies" class="translatable">多种山珍海味熬制的名汤</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/fujian/lychee-pork.png" alt="荔枝肉" class="lazy">
+                                <h4 data-lang-zh="荔枝肉" data-lang-en="Lychee Pork" class="translatable">荔枝肉</h4>
+                                <p data-lang-zh="外酥里嫩，形似荔枝的猪肉菜" data-lang-en="Crispy outside and tender inside pork dish resembling lychee" class="translatable">外酥里嫩，形似荔枝的猪肉菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/fujian/sea-cucumber-stew.png" alt="海蛎煎" class="lazy">
+                                <h4 data-lang-zh="海蛎煎" data-lang-en="Oyster Omelette" class="translatable">海蛎煎</h4>
+                                <p data-lang-zh="鲜美可口的传统小吃" data-lang-en="Delicious traditional snack with fresh oysters" class="translatable">鲜美可口的传统小吃</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/fujian/satay-noodles.png" alt="沙茶面" class="lazy">
+                                <h4 data-lang-zh="沙茶面" data-lang-en="Satay Noodles" class="translatable">沙茶面</h4>
+                                <p data-lang-zh="以沙茶酱调味的特色面食" data-lang-en="Specialty noodles flavored with satay sauce" class="translatable">以沙茶酱调味的特色面食</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/fujian/fujian-pancake.png" alt="薄饼" class="lazy">
+                                <h4 data-lang-zh="薄饼" data-lang-en="Fujian Pancake" class="translatable">薄饼</h4>
+                                <p data-lang-zh="闽南特色小吃，类似春卷" data-lang-en="Minnan specialty snack, similar to spring rolls" class="translatable">闽南特色小吃，类似春卷</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="hunan-cuisine" class="cuisine-section">
+                <h2>湘菜 Hunan Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/hunan/hunan-banner.jpg" alt="湘菜 Hunan Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="麻辣鲜香 - 中国中南部的辣味风情" data-lang-en="The Spicy and Aromatic Flavors of South-Central China" class="translatable">麻辣鲜香 - 中国中南部的辣味风情</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="湘菜，源于湖南省，是中国八大菜系之一，以其麻辣鲜香、色泽艳丽的特点著称。湘菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长煸、炒、腊、熏等技法。湘菜讲究'香辣、鲜嫩、酸辣、软糯'，追求菜品的色、香、味、形的和谐统一。" 
+                           data-lang-en="Hunan cuisine, originating from Hunan Province, is one of China's eight major culinary traditions, known for its spicy, aromatic, and colorful characteristics. Hunan cuisine emphasizes the freshness of ingredients and their original flavors, employing a variety of cooking methods, particularly excelling in quick-frying, stir-frying, curing, and smoking. Hunan cuisine pays attention to 'spicy, fresh, sour, and tender', pursuing the harmonious unity of color, aroma, taste, and presentation of dishes."
+                           class="translatable">
+                            湘菜，源于湖南省，是中国八大菜系之一，以其麻辣鲜香、色泽艳丽的特点著称。湘菜注重食材的新鲜度和原汁原味，烹调方法多样，尤其擅长煸、炒、腊、熏等技法。湘菜讲究'香辣、鲜嫩、酸辣、软糯'，追求菜品的色、香、味、形的和谐统一。
+                        </p>
+                        
+                        <p data-lang-zh="湘菜的历史可以追溯到先秦时期，但在明清时期得到了迅速发展。湖南地处中南部，气候湿热，物产丰富，尤其是各类辣椒、山珍和河鲜，为湘菜的发展提供了丰富的食材基础。湘菜的发展还受到了湖南地方文化的影响，形成了独特的烹饪风格。" 
+                           data-lang-en="The history of Hunan cuisine can be traced back to the pre-Qin period, but it developed rapidly during the Ming and Qing periods. Hunan is located in south-central China, with a humid and hot climate, rich in resources, especially various chili peppers, mountain delicacies, and river fish, providing a rich ingredient base for the development of Hunan cuisine. The development of Hunan cuisine was also influenced by Hunan's local culture, forming a unique cooking style."
+                           class="translatable">
+                            湘菜的历史可以追溯到先秦时期，但在明清时期得到了迅速发展。湖南地处中南部，气候湿热，物产丰富，尤其是各类辣椒、山珍和河鲜，为湘菜的发展提供了丰富的食材基础。湘菜的发展还受到了湖南地方文化的影响，形成了独特的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="湘菜主要分为湘江流域菜、洞庭湖菜和湘西菜三大流派。湘江流域菜注重麻辣鲜香；洞庭湖菜注重鲜香酸辣；湘西菜注重熏腊酱香。湘菜的代表技法包括煸、炒、腊、熏等，尤其擅长烹制各类辣味菜肴。湘菜的一大特色是注重辣味，讲究'无辣不成菜'，辣味层次丰富，既有辣椒的辛辣，又有姜、蒜的香辣。湘菜以其独特的风格和浓郁的口味，在中国烹饪史上占有重要地位。" 
+                           data-lang-en="Hunan cuisine is mainly divided into three major schools: Xiangjiang River cuisine, Dongting Lake cuisine, and Western Hunan cuisine. Xiangjiang River cuisine emphasizes spicy and aromatic flavors; Dongting Lake cuisine emphasizes fresh, aromatic, and sour-spicy tastes; Western Hunan cuisine emphasizes smoked, cured, and sauce-flavored dishes. Representative techniques of Hunan cuisine include quick-frying, stir-frying, curing, and smoking, particularly excelling in cooking various spicy dishes. A major feature of Hunan cuisine is its emphasis on spiciness, adhering to the principle of 'no dish is complete without spiciness', with rich layers of spicy flavors, including the spiciness of chili peppers and the aromatic spiciness of ginger and garlic. With its unique style and rich flavors, Hunan cuisine occupies an important position in Chinese culinary history."
+                           class="translatable">
+                            湘菜主要分为湘江流域菜、洞庭湖菜和湘西菜三大流派。湘江流域菜注重麻辣鲜香；洞庭湖菜注重鲜香酸辣；湘西菜注重熏腊酱香。湘菜的代表技法包括煸、炒、腊、熏等，尤其擅长烹制各类辣味菜肴。湘菜的一大特色是注重辣味，讲究'无辣不成菜'，辣味层次丰富，既有辣椒的辛辣，又有姜、蒜的香辣。湘菜以其独特的风格和浓郁的口味，在中国烹饪史上占有重要地位。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>辣椒</strong> - <span data-lang-zh="湘菜的灵魂调味品，提供辛辣味" data-lang-en="The soul seasoning of Hunan cuisine, providing spicy flavor" class="translatable">湘菜的灵魂调味品，提供辛辣味</span></li>
+                            <li><strong>豆豉</strong> - <span data-lang-zh="湘菜常用调味品，增添香气和鲜味" data-lang-en="Commonly used seasoning in Hunan cuisine, adding aroma and umami" class="translatable">湘菜常用调味品，增添香气和鲜味</span></li>
+                            <li><strong>腊肉</strong> - <span data-lang-zh="湘西特色食材，增添烟熏香气" data-lang-en="Characteristic ingredient from Western Hunan, adding smoky aroma" class="translatable">湘西特色食材，增添烟熏香气</span></li>
+                            <li><strong>姜、蒜</strong> - <span data-lang-zh="提供基础香气，增添辛辣味" data-lang-en="Providing basic aroma, adding spicy flavor" class="translatable">提供基础香气，增添辛辣味</span></li>
+                            <li><strong>醋</strong> - <span data-lang-zh="增添酸味，平衡辣味" data-lang-en="Adding sourness, balancing spiciness" class="translatable">增添酸味，平衡辣味</span></li>
+                            <li><strong>糖</strong> - <span data-lang-zh="平衡口味，增添甜味" data-lang-en="Balancing flavors, adding sweetness" class="translatable">平衡口味，增添甜味</span></li>
+                            <li><strong>剁椒</strong> - <span data-lang-zh="湘菜特色调味品，增添辣味和香气" data-lang-en="Characteristic seasoning of Hunan cuisine, adding spiciness and aroma" class="translatable">湘菜特色调味品，增添辣味和香气</span></li>
+                            <li><strong>香菜</strong> - <span data-lang-zh="增添香气和清新感" data-lang-en="Adding aroma and freshness" class="translatable">增添香气和清新感</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/hunan/chopped-chili-fish-head.png" alt="剁椒鱼头" class="lazy">
+                                <h4 data-lang-zh="剁椒鱼头" data-lang-en="Steamed Fish Head with Chili Peppers" class="translatable">剁椒鱼头</h4>
+                                <p data-lang-zh="辣椒与鱼头的经典搭配" data-lang-en="Classic combination of chili peppers and fish head" class="translatable">辣椒与鱼头的经典搭配</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/hunan/dongan-chicken.png" alt="东安子鸡" class="lazy">
+                                <h4 data-lang-zh="东安子鸡" data-lang-en="Dong'an Chicken" class="translatable">东安子鸡</h4>
+                                <p data-lang-zh="酸辣可口的传统鸡肉菜" data-lang-en="Traditional chicken dish with sour and spicy flavors" class="translatable">酸辣可口的传统鸡肉菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/hunan/mao-braised-pork.png" alt="毛氏红烧肉" class="lazy">
+                                <h4 data-lang-zh="毛氏红烧肉" data-lang-en="Chairman Mao's Braised Pork" class="translatable">毛氏红烧肉</h4>
+                                <p data-lang-zh="色泽红亮，肥而不腻的特色菜" data-lang-en="Specialty dish with bright red color, fatty but not greasy" class="translatable">色泽红亮，肥而不腻的特色菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/hunan/spicy-pork-stir-fry.png" alt="小炒肉" class="lazy">
+                                <h4 data-lang-zh="小炒肉" data-lang-en="Spicy Pork Stir-fry" class="translatable">小炒肉</h4>
+                                <p data-lang-zh="湖南家常菜，辣椒与猪肉快炒" data-lang-en="Hunan home-style dish, stir-fried pork with chili peppers" class="translatable">湖南家常菜，辣椒与猪肉快炒</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/hunan/steamed-pork-with-rice.png" alt="糯米蒸肉" class="lazy">
+                                <h4 data-lang-zh="糯米蒸肉" data-lang-en="Steamed Pork with Rice" class="translatable">糯米蒸肉</h4>
+                                <p data-lang-zh="糯米与猪肉的美味结合" data-lang-en="Delicious combination of glutinous rice and pork" class="translatable">糯米与猪肉的美味结合</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="anhui-cuisine" class="cuisine-section">
+                <h2>徽菜 Anhui Cuisine</h2>
+                <div class="cuisine-detail">
+                    <div class="cuisine-header">
+                        <div class="cuisine-banner">
+                            <img src="images/dishes/anhui/anhui-banner.jpg" alt="徽菜 Anhui Cuisine" class="cuisine-banner-img">
+                        </div>
+                        <p class="cuisine-subtitle" data-lang-zh="山野珍馐 - 中国东部山区的朴实风味" data-lang-en="The Rustic and Wild Flavors of Eastern China's Mountains" class="translatable">山野珍馐 - 中国东部山区的朴实风味</p>
+                    </div>
+                    
+                    <div class="cuisine-description">
+                        <p data-lang-zh="徽菜，源于安徽省，是中国八大菜系之一，以其朴实、醇厚、原汁原味的特点著称。徽菜注重食材的选择，尤其擅长烹制山野食材，如野生菌菇、山珍、河鲜等。徽菜讲究'鲜、醇、香、嫩'，追求菜品的本味和营养价值。" 
+                           data-lang-en="Anhui cuisine, originating from Anhui Province, is one of China's eight major culinary traditions, known for its rustic, rich, and authentic characteristics. Anhui cuisine emphasizes the selection of ingredients, particularly excelling in cooking wild ingredients, such as wild mushrooms, mountain delicacies, and river fish. Anhui cuisine pays attention to 'freshness, richness, aroma, and tenderness', pursuing the original flavor and nutritional value of dishes."
+                           class="translatable">
+                            徽菜，源于安徽省，是中国八大菜系之一，以其朴实、醇厚、原汁原味的特点著称。徽菜注重食材的选择，尤其擅长烹制山野食材，如野生菌菇、山珍、河鲜等。徽菜讲究'鲜、醇、香、嫩'，追求菜品的本味和营养价值。
+                        </p>
+                        
+                        <p data-lang-zh="徽菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。安徽地处皖南山区和江淮平原，山区资源丰富，尤其是各类野生菌菇、山珍和药材，为徽菜的发展提供了丰富的食材基础。徽菜的发展还受到了徽州文化的影响，形成了注重养生和本味的烹饪风格。" 
+                           data-lang-en="The history of Anhui cuisine can be traced back to the Tang and Song dynasties, but it developed rapidly during the Ming and Qing periods. Anhui is located in the mountainous areas of southern Anhui and the Jianghuai Plain, rich in mountain resources, especially various wild mushrooms, mountain delicacies, and medicinal herbs, providing a rich ingredient base for the development of Anhui cuisine. The development of Anhui cuisine was also influenced by Huizhou culture, forming a cooking style that emphasizes health preservation and original flavors."
+                           class="translatable">
+                            徽菜的历史可以追溯到唐宋时期，但在明清时期得到了迅速发展。安徽地处皖南山区和江淮平原，山区资源丰富，尤其是各类野生菌菇、山珍和药材，为徽菜的发展提供了丰富的食材基础。徽菜的发展还受到了徽州文化的影响，形成了注重养生和本味的烹饪风格。
+                        </p>
+                        
+                        <p data-lang-zh="徽菜主要分为沿江徽菜、沿淮徽菜和皖南徽菜三大流派。沿江徽菜注重清鲜爽口；沿淮徽菜注重浓郁醇厚；皖南徽菜注重山野风味。徽菜的代表技法包括烧、炖、蒸、炒等，尤其擅长烹制山珍野味。徽菜的一大特色是注重火候和原料的选择，讲究'原汁原味'，保持食材的本真味道。徽菜以其独特的风格和朴实的口味，在中国烹饪史上占有重要地位。" 
+                           data-lang-en="Anhui cuisine is mainly divided into three major schools: Yanjiang (along the Yangtze River) Anhui cuisine, Yanhuai (along the Huai River) Anhui cuisine, and Southern Anhui cuisine. Yanjiang Anhui cuisine emphasizes fresh and light flavors; Yanhuai Anhui cuisine emphasizes rich and mellow tastes; Southern Anhui cuisine emphasizes wild flavors. Representative techniques of Anhui cuisine include braising, stewing, steaming, and stir-frying, particularly excelling in cooking mountain delicacies and wild game. A major feature of Anhui cuisine is its emphasis on cooking time and ingredient selection, adhering to the principle of 'original juice and flavor', preserving the authentic taste of ingredients. With its unique style and rustic flavors, Anhui cuisine occupies an important position in Chinese culinary history."
+                           class="translatable">
+                            徽菜主要分为沿江徽菜、沿淮徽菜和皖南徽菜三大流派。沿江徽菜注重清鲜爽口；沿淮徽菜注重浓郁醇厚；皖南徽菜注重山野风味。徽菜的代表技法包括烧、炖、蒸、炒等，尤其擅长烹制山珍野味。徽菜的一大特色是注重火候和原料的选择，讲究'原汁原味'，保持食材的本真味道。徽菜以其独特的风格和朴实的口味，在中国烹饪史上占有重要地位。
+                        </p>
+                    </div>
+                    
+                    <div class="key-ingredients">
+                        <h3 data-lang-zh="关键食材与调料" data-lang-en="Key Ingredients and Seasonings" class="translatable">关键食材与调料</h3>
+                        <ul>
+                            <li><strong>野生菌菇</strong> - <span data-lang-zh="安徽山区的特色食材，增添鲜味" data-lang-en="Characteristic ingredients from Anhui's mountainous areas, adding umami" class="translatable">安徽山区的特色食材，增添鲜味</span></li>
+                            <li><strong>山珍</strong> - <span data-lang-zh="如竹笋、山药等山区特产" data-lang-en="Mountain delicacies such as bamboo shoots and yams" class="translatable">如竹笋、山药等山区特产</span></li>
+                            <li><strong>河鲜</strong> - <span data-lang-zh="长江、淮河流域的水产" data-lang-en="Aquatic products from the Yangtze and Huai River basins" class="translatable">长江、淮河流域的水产</span></li>
+                            <li><strong>火腿</strong> - <span data-lang-zh="徽州火腿，增添鲜香味" data-lang-en="Huizhou ham, adding fresh and aromatic flavors" class="translatable">徽州火腿，增添鲜香味</span></li>
+                            <li><strong>酱油</strong> - <span data-lang-zh="徽菜常用调味品，增添咸香" data-lang-en="Commonly used seasoning in Anhui cuisine, adding salty aroma" class="translatable">徽菜常用调味品，增添咸香</span></li>
+                            <li><strong>黄酒</strong> - <span data-lang-zh="增添香气，去除腥味" data-lang-en="Adding aroma, removing fishy smells" class="translatable">增添香气，去除腥味</span></li>
+                            <li><strong>姜、蒜</strong> - <span data-lang-zh="提供基础香气" data-lang-en="Providing basic aroma" class="translatable">提供基础香气</span></li>
+                            <li><strong>药材</strong> - <span data-lang-zh="如枸杞、黄精等，增添养生功效" data-lang-en="Medicinal herbs such as goji berries and polygonatum, adding health benefits" class="translatable">如枸杞、黄精等，增添养生功效</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signature-dishes">
+                        <h3 data-lang-zh="代表菜品" data-lang-en="Signature Dishes" class="translatable">代表菜品</h3>
+                        <div class="dish-cards">
+                            <div class="dish-card">
+                                <img data-src="images/dishes/anhui/fulijiji-chicken.png" alt="符离集烧鸡" class="lazy">
+                                <h4 data-lang-zh="符离集烧鸡" data-lang-en="Fuliiji Roasted Chicken" class="translatable">符离集烧鸡</h4>
+                                <p data-lang-zh="皮脆肉嫩，香气四溢的传统名菜" data-lang-en="Traditional delicacy with crispy skin and tender meat" class="translatable">皮脆肉嫩，香气四溢的传统名菜</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/anhui/ham-bamboo-shoots.png" alt="火腿炖笋" class="lazy">
+                                <h4 data-lang-zh="火腿炖笋" data-lang-en="Ham with Bamboo Shoots" class="translatable">火腿炖笋</h4>
+                                <p data-lang-zh="火腿与竹笋的完美结合" data-lang-en="Perfect combination of ham and bamboo shoots" class="translatable">火腿与竹笋的完美结合</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/anhui/lihongzhang-stew.png" alt="李鸿章炖烩" class="lazy">
+                                <h4 data-lang-zh="李鸿章炖烩" data-lang-en="Li Hongzhang Stew" class="translatable">李鸿章炖烩</h4>
+                                <p data-lang-zh="多种食材烹制的营养丰富的菜肴" data-lang-en="Nutritious dish made with various ingredients" class="translatable">多种食材烹制的营养丰富的菜肴</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/anhui/steamed-stone-frog.png" alt="清蒸石鸡" class="lazy">
+                                <h4 data-lang-zh="清蒸石鸡" data-lang-en="Steamed Stone Frog" class="translatable">清蒸石鸡</h4>
+                                <p data-lang-zh="保持野味和美味的传统烹饪方式" data-lang-en="Traditional cooking method that preserves the wild flavor" class="translatable">保持野味和美味的传统烹饪方式</p>
+                            </div>
+                            <div class="dish-card">
+                                <img data-src="images/dishes/anhui/stinky-tofu.png" alt="毛豆腐" class="lazy">
+                                <h4 data-lang-zh="毛豆腐" data-lang-en="Hairy Tofu" class="translatable">毛豆腐</h4>
+                                <p data-lang-zh="表面长有白色霉菌的特色豆腐" data-lang-en="Specialty tofu with white mold on the surface" class="translatable">表面长有白色霉菌的特色豆腐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 其他菜系内容 -->
+        </main>
+    </div>
+    
+    <!-- footer -->
+    
+    <div class="pagination-controls">
+        <button id="prev-cuisine" class="pagination-btn">上一个菜系</button>
+        <span id="cuisine-counter">1 / 8</span>
+        <button id="next-cuisine" class="pagination-btn">下一个菜系</button>
+    </div>
+    
+    <script src="scripts.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有菜系部分
+        const cuisineSections = document.querySelectorAll('.cuisine-section');
+        
+        // 默认隐藏所有菜系
+        cuisineSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // 检查URL中的锚点
+        let targetId = '';
+        if (window.location.hash) {
+            targetId = window.location.hash.substring(1);
+        } else {
+            // 如果没有锚点，默认显示第一个菜系
+            targetId = cuisineSections[0].id;
+        }
+        
+        // 显示目标菜系
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+        } else {
+            // 如果找不到目标菜系，显示第一个
+            cuisineSections[0].style.display = 'block';
+        }
+        
+        // 更新侧边栏活动链接
+        const allLinks = document.querySelectorAll('.cuisine-link');
+        allLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + targetId) {
+                link.classList.add('active');
+            }
+        });
+    });
+    </script>
+    
+    <style>
+    .pagination-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+        gap: 20px;
+    }
+    
+    .pagination-btn {
+        padding: 8px 16px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .pagination-btn:hover {
+        background-color: #e0e0e0;
+    }
+    
+    #cuisine-counter {
+        font-size: 16px;
+        color: #666;
+    }
+    </style>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 检查是否有语言选择器
+        const languageSelector = document.querySelector('.language-selector select');
+        if (!languageSelector) return;
+        
+        // 定义翻译对象（可以从主页复制）
+        const translations = {
+            // 复制index.html中的translations对象
+        };
+        
+        // 初始化i18n属性
+        function initializeI18n() {
+            // 为页面元素添加data-i18n属性
+            // 页脚元素
+            document.querySelectorAll('.footer-column h4')[0].setAttribute('data-i18n', 'footer_explore');
+            document.querySelectorAll('.footer-column ul')[0].querySelectorAll('li a')[0].setAttribute('data-i18n', 'footer_regional');
+            // ... 其他页脚元素
+            
+            // 菜系页面特有元素
+            document.querySelector('.cuisine-sidebar h3').setAttribute('data-i18n', 'china_eight_cuisines');
+            document.querySelector('.cuisine-map h4').setAttribute('data-i18n', 'cuisine_map');
+            document.querySelector('#prev-cuisine').setAttribute('data-i18n', 'prev_cuisine');
+            document.querySelector('#next-cuisine').setAttribute('data-i18n', 'next_cuisine');
+        }
+        
+        // 更新页面语言
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            // 更新HTML lang属性
+            document.documentElement.lang = lang;
+        }
+        
+        // 初始化i18n属性
+        initializeI18n();
+        
+        // 检查是否有保存的语言偏好
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            languageSelector.value = savedLanguage;
+            updateLanguage(savedLanguage);
+        }
+        
+        // 监听语言选择器变化
+        languageSelector.addEventListener('change', function() {
+            updateLanguage(this.value);
+            localStorage.setItem('preferredLanguage', this.value);
+        });
+    });
+    </script>
+    
+    <div style="margin: 20px; padding: 20px; border: 1px solid red;">
+        <p>测试SVG图片：</p>
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="#f0f0f0"/>
+            <circle cx="100" cy="100" r="80" fill="#ff6b6b"/>
+            <text x="100" y="120" font-family="Arial" font-size="20" text-anchor="middle" fill="white">测试图片</text>
+        </svg>
+    </div>
+    
+    <style>
+        /* 添加动画效果 */
+        .map-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0);
+            overflow: auto;
+            transition: background-color 0.3s ease;
+        }
+        
+        .map-modal.show {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 0;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        
+        .map-modal.show .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .modal-header {
+            background-color: #f8f8f8;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-header h3 {
+            color: var(--primary-color);
+            margin: 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .map-description {
+            margin-top: 15px;
+            color: #666;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .modal-footer {
+            background-color: #f8f8f8;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .cuisine-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .cuisine-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.2s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+        
+        #modal-map-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
+            
+            .cuisine-icon {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapImage = document.querySelector('.map-image');
+            const modal = document.getElementById('map-modal');
+            const modalImg = document.getElementById('modal-map-img');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // 点击地图打开模态框
+            mapImage.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+                // 强制重绘
+                setTimeout(function() {
+                    modal.classList.add('show');
+                }, 10);
+            });
+            
+            // 点击关闭按钮关闭模态框
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('show');
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                }, 300);
+            });
+            
+            // 点击模态框外部关闭模态框
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.classList.remove('show');
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // 添加键盘ESC关闭功能
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    modal.classList.remove('show');
+                    setTimeout(function() {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // 添加鼠标悬停提示
+            mapImage.title = "点击查看大图";
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Fancybox.bind("[data-fancybox]", {
+                // 可选配置
+            });
+        });
+    </script>
+
+    <!-- 在页面底部添加模态框 -->
+    <div id="map-modal" class="map-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3>中国八大菜系地图</h3>
+            </div>
+            <div class="modal-body">
+                <img id="modal-map-img" src="" alt="中国菜系地图（大图）">
+                <p class="map-description">中国八大菜系包括川菜、粤菜、鲁菜、苏菜、浙菜、闽菜、湘菜和徽菜，各具特色，形成了中国丰富多彩的烹饪文化。点击地图上的区域可以了解各地特色美食。</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cuisine-icons">
+                    <span class="cuisine-icon">川</span>
+                    <span class="cuisine-icon">粤</span>
+                    <span class="cuisine-icon">鲁</span>
+                    <span class="cuisine-icon">苏</span>
+                    <span class="cuisine-icon">浙</span>
+                    <span class="cuisine-icon">闽</span>
+                    <span class="cuisine-icon">湘</span>
+                    <span class="cuisine-icon">徽</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有菜系链接
+            const cuisineLinks = document.querySelectorAll('.cuisine-link');
+            
+            // 为每个链接添加点击事件
+            cuisineLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // 阻止默认行为
+                    
+                    // 获取目标元素
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // 计算滚动位置
+                        const headerOffset = 80; // 导航栏高度
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        // 平滑滚动
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // 更新URL（不触发滚动）
+                        history.pushState(null, null, this.getAttribute('href'));
+                        
+                        // 移除所有链接的活动状态
+                        cuisineLinks.forEach(l => l.classList.remove('active'));
+                        
+                        // 为当前点击的链接添加活动状态
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // 检查URL中的锚点，如果存在则滚动到对应位置
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    setTimeout(function() {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // 高亮对应链接
+                        const activeLink = document.querySelector(`.cuisine-link[href="#${targetId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }, 300);
+                }
+            }
+        });
+    </script>
+
+    <!-- 在页面底部添加语言切换脚本 -->
+    <script>
+        // 保存当前语言
+        let currentLanguage = 'zh'; // 默认中文
+        
+        // 切换语言函数
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // 保存用户语言偏好
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // 获取所有可翻译元素
+            const translatableElements = document.querySelectorAll('.translatable');
+            
+            // 更新每个元素的内容
+            translatableElements.forEach(element => {
+                const translatedText = element.getAttribute(`data-lang-${lang}`);
+                if (translatedText) {
+                    element.textContent = translatedText;
+                }
+            });
+            
+            // 更新页面UI元素
+            updateUIElements(lang);
+        }
+        
+        // 更新UI元素
+        function updateUIElements(lang) {
+            // 导航菜单
+            const navTexts = {
+                'zh': {
+                    'home': '首页',
+                    'regional-cuisines': '地方菜系',
+                    'cultural-stories': '文化故事',
+                    'cooking-classes': '在线课程',
+                    'shop': '商店',
+                    'membership': '会员'
+                },
+                'en': {
+                    'home': 'Home',
+                    'regional-cuisines': 'Regional Cuisines',
+                    'cultural-stories': 'Cultural Stories',
+                    'cooking-classes': 'Online Classes',
+                    'shop': 'Shop',
+                    'membership': 'Membership'
+                }
+            };
+            
+            // 更新导航菜单文本
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                const key = link.getAttribute('href').replace('#', '').replace('index.html', 'home');
+                if (navTexts[lang] && navTexts[lang][key]) {
+                    link.textContent = navTexts[lang][key];
+                }
+            });
+            
+            // 更新返回首页按钮
+            const backButton = document.querySelector('.back-button');
+            if (backButton) {
+                backButton.textContent = lang === 'zh' ? '返回首页' : 'Back to Home';
+            }
+            
+            // 更新面包屑导航
+            const breadcrumbHome = document.querySelector('.breadcrumbs a');
+            if (breadcrumbHome) {
+                breadcrumbHome.textContent = lang === 'zh' ? '首页' : 'Home';
+            }
+            
+            // 更新菜系标题和副标题
+            updateCuisineTitles(lang);
+        }
+        
+        // 更新菜系标题和副标题
+        function updateCuisineTitles(lang) {
+            const cuisineTitles = {
+                'zh': {
+                    'sichuan': '川菜 Sichuan Cuisine',
+                    'cantonese': '粤菜 Cantonese Cuisine',
+                    'shandong': '鲁菜 Shandong Cuisine',
+                    'jiangsu': '苏菜 Jiangsu Cuisine',
+                    'zhejiang': '浙菜 Zhejiang Cuisine',
+                    'fujian': '闽菜 Fujian Cuisine',
+                    'hunan': '湘菜 Hunan Cuisine',
+                    'anhui': '徽菜 Anhui Cuisine'
+                },
+                'en': {
+                    'sichuan': 'Sichuan Cuisine',
+                    'cantonese': 'Cantonese Cuisine',
+                    'shandong': 'Shandong Cuisine',
+                    'jiangsu': 'Jiangsu Cuisine',
+                    'zhejiang': 'Zhejiang Cuisine',
+                    'fujian': 'Fujian Cuisine',
+                    'hunan': 'Hunan Cuisine',
+                    'anhui': 'Anhui Cuisine'
+                }
+            };
+            
+            const cuisineSubtitles = {
+                'zh': {
+                    'sichuan': '麻辣鲜香 - 中国西部的大胆辛辣风味',
+                    'cantonese': '鲜香清淡 - 中国南部的精致烹饪艺术',
+                    'shandong': '咸鲜醇厚 - 中国北方的浓郁风味',
+                    'jiangsu': '精致平和 - 中国东部的精细烹饪技艺',
+                    'zhejiang': '鲜美清淡 - 江南水乡的精致风味',
+                    'fujian': '清鲜脆嫩 - 中国东南沿海的独特风味',
+                    'hunan': '香辣酸鲜 - 中国中部的大胆辛辣风味',
+                    'anhui': '原汁原味 - 中国东部的朴实醇厚风味'
+                },
+                'en': {
+                    'sichuan': 'The Bold and Spicy Flavors of Western China',
+                    'cantonese': 'The Delicate and Fresh Flavors of Southern China',
+                    'shandong': 'The Hearty and Savory Flavors of Northern China',
+                    'jiangsu': 'The Refined and Elegant Flavors of Eastern China',
+                    'zhejiang': 'The Fresh and Light Flavors of the Yangtze River Delta',
+                    'fujian': 'The Fresh and Tender Flavors of Southeastern China',
+                    'hunan': 'The Bold and Spicy Flavors of Central China',
+                    'anhui': 'The Simple and Hearty Flavors of Eastern China'
+                }
+            };
+            
+            // 更新菜系标题
+            document.querySelectorAll('.cuisine-section h2').forEach(title => {
+                const cuisineId = title.closest('.cuisine-section').id.replace('-cuisine', '');
+                if (cuisineTitles[lang] && cuisineTitles[lang][cuisineId]) {
+                    title.textContent = cuisineTitles[lang][cuisineId];
+                }
+            });
+            
+            // 更新菜系副标题
+            document.querySelectorAll('.cuisine-subtitle').forEach(subtitle => {
+                const cuisineId = subtitle.closest('.cuisine-section').id.replace('-cuisine', '');
+                if (cuisineSubtitles[lang] && cuisineSubtitles[lang][cuisineId]) {
+                    subtitle.textContent = cuisineSubtitles[lang][cuisineId];
+                }
+            });
+        }
+        
+        // 页面加载时检查用户语言偏好
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage) {
+                // 设置语言选择器的值
+                const languageSelect = document.getElementById('language-select');
+                if (languageSelect) {
+                    languageSelect.value = savedLanguage;
+                }
+                
+                // 应用保存的语言
+                changeLanguage(savedLanguage);
+            }
+        });
+    </script>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+      <defs>
+        <pattern id="cuisine-pattern" patternUnits="userSpaceOnUse" width="600" height="600">
+          <g fill="none" stroke="#000" stroke-width="1.5">
+            <!-- 筷子 -->
+            <path d="M100,100 L120,300 M110,100 L130,300"/>
+            
+            <!-- 碗 -->
+            <ellipse cx="200" cy="150" rx="40" ry="20"/>
+            <path d="M160,150 C160,180 240,180 240,150"/>
+            
+            <!-- 茶壶 -->
+            <path d="M350,200 C350,180 380,180 380,200 L380,230 C380,250 350,250 350,230 Z"/>
+            <path d="M380,210 C400,210 400,220 380,220"/>
+            <path d="M350,210 L330,220 L350,230"/>
+            
+            <!-- 葱 -->
+            <path d="M450,100 C450,150 470,150 470,100"/>
+            <path d="M460,100 L460,50"/>
+            
+            <!-- 姜 -->
+            <path d="M500,400 C520,380 540,400 520,420 C500,440 480,420 500,400 Z"/>
+            
+            <!-- 蒜 -->
+            <circle cx="150" cy="400" r="20"/>
+            <circle cx="170" cy="390" r="15"/>
+            <circle cx="160" cy="420" r="15"/>
+            
+            <!-- 辣椒 -->
+            <path d="M300,350 C300,400 320,400 320,350 L310,320"/>
+            <path d="M310,320 L310,300"/>
+            
+            <!-- 八角 -->
+            <path d="M400,500 L420,480 L440,500 L420,520 L400,500 Z"/>
+            <path d="M420,480 L420,520 M400,500 L440,500"/>
+            
+            <!-- 瓷盘 -->
+            <circle cx="250" cy="500" r="40"/>
+            <circle cx="250" cy="500" r="30" stroke-dasharray="2,2"/>
+            
+            <!-- 锅铲 -->
+            <path d="M50,500 L50,450 C50,430 80,430 80,450 L80,460"/>
+            <path d="M50,460 L80,460"/>
+            
+            <!-- 蒸笼 -->
+            <circle cx="550" cy="150" r="30"/>
+            <circle cx="550" cy="150" r="25"/>
+            <path d="M520,150 L580,150 M520,140 L580,140 M520,160 L580,160"/>
+            
+            <!-- 勺子 -->
+            <path d="M550,300 L500,350"/>
+            <circle cx="490" cy="360" r="15"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#cuisine-pattern)" opacity="0.07"/>
+    </svg>
+</body>
+</html> 
