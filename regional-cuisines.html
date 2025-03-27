@@ -809,9 +809,51 @@
         const languageSelector = document.querySelector('.language-selector select');
         if (!languageSelector) return;
         
-        // 定义翻译对象（可以从主页复制）
+        // 定义翻译对象
         const translations = {
-            // 复制index.html中的translations对象
+            'en': {
+                // 导航和通用元素
+                'footer_explore': 'Explore',
+                'footer_regional': 'Regional Cuisines',
+                'china_eight_cuisines': 'China\'s Eight Great Cuisines',
+                'cuisine_map': 'Chinese Cuisine Map',
+                'prev_cuisine': 'Previous Cuisine',
+                'next_cuisine': 'Next Cuisine',
+                
+                // 川菜菜品翻译
+                'dish_mapo_tofu': 'Mapo Tofu',
+                'desc_mapo_tofu': 'Spicy tofu dish created by Chen Mapo during the Qing Dynasty',
+                'dish_kung_pao': 'Kung Pao Chicken',
+                'desc_kung_pao': 'Classic Sichuan dish with chicken, peanuts and dried chili peppers',
+                'dish_sour_fish': 'Sour Cabbage Fish',
+                'desc_sour_fish': 'Tangy and spicy fish slices with pickled cabbage',
+                'dish_twice_pork': 'Twice-Cooked Pork',
+                'desc_twice_pork': 'Classic dish where pork is first boiled then stir-fried',
+                'dish_dandan': 'Dan Dan Noodles',
+                'desc_dandan': 'Sichuan specialty noodles with spicy sauce made with Sichuan pepper and chili oil'
+            },
+            'zh': {
+                // 导航和通用元素
+                'footer_explore': '探索',
+                'footer_regional': '区域菜系',
+                'china_eight_cuisines': '中国八大菜系',
+                'cuisine_map': '中国菜系地图',
+                'prev_cuisine': '上一个菜系',
+                'next_cuisine': '下一个菜系',
+                
+                // 川菜菜品翻译
+                'dish_mapo_tofu': '麻婆豆腐',
+                'desc_mapo_tofu': '麻辣鲜香的豆腐菜肴，由陈麻婆创制于清代',
+                'dish_kung_pao': '宫保鸡丁',
+                'desc_kung_pao': '鲜香麻辣的经典川菜，以鸡肉、花生和干辣椒为主要原料',
+                'dish_sour_fish': '酸菜鱼',
+                'desc_sour_fish': '酸辣开胃的鱼片，配以酸菜提味，是川菜中的经典菜品',
+                'dish_twice_pork': '回锅肉',
+                'desc_twice_pork': '先煮后炒的经典川菜，肥而不腻，鲜香可口',
+                'dish_dandan': '担担面',
+                'desc_dandan': '四川特色面食，麻辣鲜香，以花椒、辣椒和芝麻酱调味'
+            },
+            // 其他语言...
         };
         
         // 初始化i18n属性
@@ -867,16 +909,40 @@
         
         // 更新页面语言
         function updateLanguage(lang) {
+            console.log('切换语言到:', lang); // 添加调试信息
+            
             const elements = document.querySelectorAll('[data-i18n]');
+            console.log('找到需要翻译的元素:', elements.length); // 添加调试信息
+            
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
+                console.log('翻译元素:', el, '键:', key); // 添加调试信息
+                
                 if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
+                    console.log('翻译成功:', translations[lang][key]); // 添加调试信息
+                } else {
+                    console.warn('未找到翻译:', lang, key); // 添加调试信息
                 }
             });
             
             // 更新HTML lang属性
             document.documentElement.lang = lang;
+            
+            // 更新可翻译元素
+            updateTranslatableElements(lang);
+        }
+        
+        // 更新带有data-lang-xx属性的可翻译元素
+        function updateTranslatableElements(lang) {
+            const translatableElements = document.querySelectorAll('.translatable');
+            
+            translatableElements.forEach(element => {
+                const translatedText = element.getAttribute(`data-lang-${lang}`);
+                if (translatedText) {
+                    element.textContent = translatedText;
+                }
+            });
         }
         
         // 初始化i18n属性
@@ -885,15 +951,27 @@
         // 检查是否有保存的语言偏好
         const savedLanguage = localStorage.getItem('preferredLanguage');
         if (savedLanguage) {
+            console.log('使用保存的语言偏好:', savedLanguage); // 添加调试信息
             languageSelector.value = savedLanguage;
             updateLanguage(savedLanguage);
+        } else {
+            console.log('没有保存的语言偏好，使用默认语言'); // 添加调试信息
         }
         
         // 监听语言选择器变化
         languageSelector.addEventListener('change', function() {
-            updateLanguage(this.value);
-            localStorage.setItem('preferredLanguage', this.value);
+            const selectedLang = this.value;
+            console.log('语言选择器变化:', selectedLang); // 添加调试信息
+            updateLanguage(selectedLang);
+            localStorage.setItem('preferredLanguage', selectedLang);
         });
+        
+        // 手动触发一次语言更新，确保所有元素都被翻译
+        setTimeout(function() {
+            const currentLang = languageSelector.value;
+            console.log('页面加载完成，手动触发语言更新:', currentLang); // 添加调试信息
+            updateLanguage(currentLang);
+        }, 500);
     });
     </script>
     
@@ -1398,5 +1476,32 @@
       </defs>
       <rect width="100%" height="100%" fill="url(#cuisine-pattern)" opacity="0.07"/>
     </svg>
+
+    <!-- 添加到页面底部 -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button onclick="debugTranslations()" style="padding: 10px; background: #f00; color: white; border: none; border-radius: 5px;">
+            调试翻译
+        </button>
+    </div>
+
+    <script>
+    function debugTranslations() {
+        console.log('当前语言:', document.documentElement.lang);
+        console.log('语言选择器值:', document.querySelector('.language-selector select').value);
+        console.log('翻译对象:', translations);
+        
+        const elements = document.querySelectorAll('[data-i18n]');
+        console.log('需要翻译的元素数量:', elements.length);
+        
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            console.log('元素:', el.tagName, '键:', key, '当前文本:', el.textContent);
+        });
+        
+        // 手动触发翻译
+        updateLanguage('en');
+        alert('调试信息已输出到控制台');
+    }
+    </script>
 </body>
 </html> 
