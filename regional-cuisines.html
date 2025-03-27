@@ -909,20 +909,13 @@
         
         // 更新页面语言
         function updateLanguage(lang) {
-            console.log('切换语言到:', lang); // 添加调试信息
-            
             const elements = document.querySelectorAll('[data-i18n]');
-            console.log('找到需要翻译的元素:', elements.length); // 添加调试信息
             
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                console.log('翻译元素:', el, '键:', key); // 添加调试信息
                 
                 if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
-                    console.log('翻译成功:', translations[lang][key]); // 添加调试信息
-                } else {
-                    console.warn('未找到翻译:', lang, key); // 添加调试信息
                 }
             });
             
@@ -951,17 +944,16 @@
         // 检查是否有保存的语言偏好
         const savedLanguage = localStorage.getItem('preferredLanguage');
         if (savedLanguage) {
-            console.log('使用保存的语言偏好:', savedLanguage); // 添加调试信息
             languageSelector.value = savedLanguage;
             updateLanguage(savedLanguage);
         } else {
-            console.log('没有保存的语言偏好，使用默认语言'); // 添加调试信息
+            languageSelector.value = 'zh';
+            updateLanguage('zh');
         }
         
         // 监听语言选择器变化
         languageSelector.addEventListener('change', function() {
             const selectedLang = this.value;
-            console.log('语言选择器变化:', selectedLang); // 添加调试信息
             updateLanguage(selectedLang);
             localStorage.setItem('preferredLanguage', selectedLang);
         });
@@ -969,20 +961,10 @@
         // 手动触发一次语言更新，确保所有元素都被翻译
         setTimeout(function() {
             const currentLang = languageSelector.value;
-            console.log('页面加载完成，手动触发语言更新:', currentLang); // 添加调试信息
             updateLanguage(currentLang);
         }, 500);
     });
     </script>
-    
-    <div style="margin: 20px; padding: 20px; border: 1px solid red;">
-        <p>测试SVG图片：</p>
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100%" height="100%" fill="#f0f0f0"/>
-            <circle cx="100" cy="100" r="80" fill="#ff6b6b"/>
-            <text x="100" y="120" font-family="Arial" font-size="20" text-anchor="middle" fill="white">测试图片</text>
-        </svg>
-    </div>
     
     <style>
         /* 添加动画效果 */
@@ -1476,32 +1458,5 @@
       </defs>
       <rect width="100%" height="100%" fill="url(#cuisine-pattern)" opacity="0.07"/>
     </svg>
-
-    <!-- 添加到页面底部 -->
-    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-        <button onclick="debugTranslations()" style="padding: 10px; background: #f00; color: white; border: none; border-radius: 5px;">
-            调试翻译
-        </button>
-    </div>
-
-    <script>
-    function debugTranslations() {
-        console.log('当前语言:', document.documentElement.lang);
-        console.log('语言选择器值:', document.querySelector('.language-selector select').value);
-        console.log('翻译对象:', translations);
-        
-        const elements = document.querySelectorAll('[data-i18n]');
-        console.log('需要翻译的元素数量:', elements.length);
-        
-        elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            console.log('元素:', el.tagName, '键:', key, '当前文本:', el.textContent);
-        });
-        
-        // 手动触发翻译
-        updateLanguage('en');
-        alert('调试信息已输出到控制台');
-    }
-    </script>
 </body>
 </html> 
